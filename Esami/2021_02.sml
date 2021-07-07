@@ -10,6 +10,13 @@
      |  f (a::[]) = a
      |  f (a::b::[]) = a - b
      |  f (a::b::l) = a - b + f(l);
+     
+ (* Soluzione alternativa *)
+    val f = let
+     fun diff(x:int, y:int) = x - y;
+    in
+     foldr diff 0
+    end;
 
 
 (*  Come chiamare questa funzione - NON FA PARTE DELLA SOLUZIONE DELL'ESERCIZIO (utili per capire il funzionamento) *)
